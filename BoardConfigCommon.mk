@@ -120,6 +120,9 @@ TARGET_NEED_SAMSUNG_MAGIC_ZSL_1508 := true
 # Boostpulse
 TARGET_MPDECISION_BOOST_SOCKET := /sys/devices/system/cpu/cpufreq/interactive/boostpulse
 
+# RIL
+BOARD_RIL_CLASS := ../../../device/samsung/jf-common/ril
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
         device/samsung/jf-common/sepolicy

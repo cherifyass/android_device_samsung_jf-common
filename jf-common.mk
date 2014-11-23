@@ -28,6 +28,9 @@ PRODUCT_COPY_FILES += \
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/jf-common/overlay
 
+# Display 
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -93,6 +96,10 @@ PRODUCT_PACKAGES += OmniTorch
 PRODUCT_COPY_FILES += \
     device/samsung/jf-common/bin/compcache:system/bin/compcache \
     device/samsung/jf-common/bin/handle_compcache:system/bin/handle_compcache
+
+# ril
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.ril_class=jflteRIL
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -204,7 +211,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_1="" \
     persist.rild.nitz_short_ons_2="" \
     persist.rild.nitz_short_ons_3="" \
-    ro.telephony.ril.v3=newDriverCall
+    ro.telephony.ril.config=newDriverCallU,newDialCode
 
 # call common msm8960
 $(call inherit-product, device/samsung/msm8960-common/msm8960.mk)
