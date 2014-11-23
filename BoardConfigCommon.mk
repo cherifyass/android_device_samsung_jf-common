@@ -123,34 +123,3 @@ TARGET_MPDECISION_BOOST_SOCKET := /sys/devices/system/cpu/cpufreq/interactive/bo
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/jf-common/ril
 
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-        device/samsung/jf-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-	file_contexts \
-	property_contexts \
-	te_macros \
-	bluetooth_loader.te \
-	bridge.te \
-	camera.te \
-	conn_init.te \
-	device.te \
-	dhcp.te \
-	domain.te \
-	drmserver.te \
-	file.te \
-	init.te \
-	kickstart.te \
-	mediaserver.te \
-	netmgrd.te \
-	qmux.te \
-	rild.te \
-	rmt.te \
-	sensors.te \
-	surfaceflinger.te \
-	system.te \
-	tee.te \
-	thermald.te \
-	ueventd.te \
-	wpa_supplicant.te
